@@ -37,10 +37,10 @@
 </script>
 
 <!-- Navigation Bar -->
-<nav class="sticky top-0 z-50 flex items-center justify-between bg-orange-600 p-4 text-white">
+<nav class="sticky top-0 z-50 flex items-center justify-between bg-purple-900 p-4 text-white">
 	<div class="flex items-center space-x-4">
 		<!-- Logo or app name -->
-		<div class="text-xl font-bold">Chatbot</div>
+		<div class="text-xl font-bold">Jcena AI</div>
 	</div>
 
 	<div class="flex items-center space-x-4">
@@ -92,7 +92,8 @@
 	<!-- Dropdown Menu -->
 	{#if isMenuOpen}
 		<!-- Backdrop to close menu when clicking outside -->
-		<div class="fixed inset-0 z-40" on:click={closeMenu}></div>
+		<button class="fixed inset-0 z-40" on:click={closeMenu} tabindex="0" aria-label="Close menu"
+		></button>
 
 		<!-- Menu Content -->
 		<div class="absolute top-16 right-4 z-50 w-64 rounded-lg bg-slate-700 p-4 shadow-lg">
@@ -119,8 +120,9 @@
 
 			<!-- Font Size Selector -->
 			<div class="mb-4">
-				<label class="mb-2 block font-medium">Font Size</label>
+				<label for="font-size-select" class="mb-2 block font-medium">Font Size</label>
 				<select
+					id="font-size-select"
 					on:change={changeFontSize}
 					bind:value={userSettings.fontSize}
 					class="w-full rounded-md border-none bg-slate-600 px-3 py-2 text-white hover:bg-slate-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
